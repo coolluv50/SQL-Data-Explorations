@@ -1,2 +1,2 @@
 # SQL-Data-Explorations
-A series of case studies for different datasets where queries for data exploration in T-SQL are written
+This project examines a case study for trades and companies where T-sql query is required for a report based on certain business requirements.
