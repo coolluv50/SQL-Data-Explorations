@@ -48,3 +48,24 @@
           insert into trades values (20120216, 'Lil Mermaid', 'Absolute', 30);
 
           insert into trades values (20120217, 'Lil Mermaid', 'Absolute', 50);
+          
+          
+select country, case when sum(exports) is null then 0 else sum(exports) end as exports,
+case when sum(imports) is null then 0 else sum(imports) end as imports
+from
+	(select c.country, c.name, e.exports, i.imports
+	from companies c
+	left join								-- Left joining companies table to subquery e on name
+			(select seller as name , sum(value) as exports
+			from trades
+			group by seller) e					--Subquery aggregating the exports by seller (company) aliased as e
+	on c.name=e.name
+	left join								--Left joining companies table on subquery i
+
+			(select buyer as name , sum(value) as imports
+			from trades
+			group by buyer) i					--Subquery aggreagting the imports by seller aliased as i
+	on c.name=i.name
+	) final
+group by country
+order by country;
