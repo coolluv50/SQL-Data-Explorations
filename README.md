@@ -64,7 +64,7 @@
 	
 --Query to explore dataset and generate required report for buses and passengers
 	
-	Select b.id, count(Passengers_id) as [PassengersOnBoard]
+	Select b.id, count(Passengers_id) [passengers_on_board]
 	from
 	buses b
 	left join
