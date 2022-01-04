@@ -80,7 +80,7 @@
 			inner join
 			passengers
 			on buses.origin=passengers.origin and buses.destination=passengers.destination and passengers.time <= buses.time
-			) as sub1		--this subquery aliased as sub1 inner joins buses and passengers where destination and origin aligns and time of arrival by 								--passenger is less than or equals to bus' departure time.
+			) as sub1		--this subquery aliased as sub1 inner joins buses and passengers where destination and origin aligns and time of arrival by passenger is less than or equals to bus' departure time.
 		)sub2				--thsi subquery asigns rank to the number of possible buses a passenger can board
 		where possibility_rank =1
 		) sub3				-- this assigns passnegrs to buses with the earliest possbile departure 
