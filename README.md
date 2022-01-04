@@ -1,5 +1,5 @@
 # SQL-Data-Explorations
-# This project examines different case studies (corresponding files in 'go to file' folder) for data exploration. Respective query for each case study below the case study title
+# This project examines different case studies (corresponding files in 'go to file' folder) for data exploration. See respective queries for each case study below the case study title
 
 -- Ensure master database is in use
 
